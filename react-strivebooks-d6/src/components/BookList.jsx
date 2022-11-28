@@ -3,7 +3,6 @@ import SingleBook from "./SingleBook";
 import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
@@ -14,10 +13,10 @@ class BookList extends React.Component {
   };
   render() {
     return (
-      <Container>
-        <div class="container-fluid">
+      <Container fluid className="mx-0 px-0 ">
+        <Container fluid className="mx-0 mb-5 px-0 myNav">
           <Navbar bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand href="#">Goodreads</Navbar.Brand>
+            <Navbar.Brand href="#">Louis Books</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -27,26 +26,6 @@ class BookList extends React.Component {
               >
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <Nav.Link href="#action2">My Books</Nav.Link>
-                <NavDropdown title="Browse" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Community" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
               </Nav>
               <Form className="d-flex">
                 <FormControl
@@ -62,18 +41,20 @@ class BookList extends React.Component {
               </Form>
             </Navbar.Collapse>
           </Navbar>
-        </div>
-        <Row>
-          {this.props.books
-            .filter((element) =>
-              element.title.toLowerCase().includes(this.state.searchQuery)
-            )
-            .map((element) => (
-              <Col xs={4} md={3}>
-                <SingleBook book={element} />
-              </Col>
-            ))}
-        </Row>
+        </Container>
+        <Container>
+          <Row>
+            {this.props.books
+              .filter((element) =>
+                element.title.toLowerCase().includes(this.state.searchQuery)
+              )
+              .map((element) => (
+                <Col xs={4} md={3}>
+                  <SingleBook book={element} />
+                </Col>
+              ))}
+          </Row>
+        </Container>
       </Container>
     );
   }

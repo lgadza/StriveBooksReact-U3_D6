@@ -39,10 +39,10 @@ class AdComment extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mb-5">
         <Form onSubmit={this.sendComment}>
           <Form.Group>
-            <Form.Label>Comment Text</Form.Label>
+            <Form.Label>Write Your Comment Here </Form.Label>
             <Form.Control
               type="text"
               placeholder="Add comment here"
@@ -58,7 +58,7 @@ class AdComment extends React.Component {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Rating</Form.Label>
+            <Form.Label>Rate The Book</Form.Label>
             <Form.Control
               as="select"
               onChange={(e) =>
@@ -78,7 +78,7 @@ class AdComment extends React.Component {
             </Form.Control>
           </Form.Group>
           <Button variant="primary" type="submit">
-            Submit
+            Post Comment
           </Button>
         </Form>
       </div>
