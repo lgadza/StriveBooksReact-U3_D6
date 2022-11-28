@@ -9,10 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div class="container-fluid">
-      {/* <WarningSign text="your books available" variant="danger" />
-        <MyBadge text="whatever" color="primary" /> */}
-
-      {/* <SingleBook book={history[0]} /> */}
       <BookList books={history} />
     </div>
   );
