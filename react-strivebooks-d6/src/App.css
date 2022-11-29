@@ -41,3 +41,13 @@
   padding-left: 0 !important;
   height: 40px !important;
 }
+.Comments-area {
+  position: fixed;
+  /* left: 0; */
+  right: 20px;
+  width: 30%;
+  bottom: 0;
+  top: 30px;
+  border-left: 2px solid black;
+  padding-left: 30px;
+}

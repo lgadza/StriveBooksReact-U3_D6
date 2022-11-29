@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
+import CommentArea from "./CommentArea";
 
 class BookList extends React.Component {
   state = {
@@ -49,9 +50,7 @@ class BookList extends React.Component {
                 element.title.toLowerCase().includes(this.state.searchQuery)
               )
               .map((element) => (
-                <Col xs={4} md={3}>
-                  <SingleBook book={element} />
-                </Col>
+                <SingleBook book={element} />
               ))}
           </Row>
         </Container>

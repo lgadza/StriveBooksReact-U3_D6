@@ -28,7 +28,7 @@ class CommentArea extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="Comments-area">
         <AddComment asin={this.props.asin} />
         <CommentList commentsProps={this.state.comments} />
       </div>
